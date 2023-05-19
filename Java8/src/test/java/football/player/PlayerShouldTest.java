@@ -1,5 +1,6 @@
 package football.player;
 
+import helper.PlayerTestHelper;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class PlayerShouldTest {
     @Test
     void give_the_best_scorer_with_OOP() { // behtarin goolzn ra be ma tahvil bede
-        final List<Player> scorers = getPlayers();
+        final List<Player> scorers = new PlayerTestHelper().getPlayers();
 
         Player bestPlayer = scorers.get(0);
         for (Player scorer : scorers) {
@@ -27,21 +28,13 @@ class PlayerShouldTest {
 
     @Test
     void give_the_best_scorer_with_FunctionalProgramming() {
-        final List<Player> scorers = getPlayers();
+        final List<Player> scorers = new PlayerTestHelper().getPlayers();
 
         final Player bestPlayer = scorers.stream()
                 .max(Comparator.comparing(player -> player.getGoal()))
                 .get();
 
         assertThat(bestPlayer.getName()).isEqualTo("Cristiano Ronaldo");
-    }
-    private static List<Player> getPlayers() {
-        final List<Player> scorers = new LinkedList<>();
-        scorers.add(new Player("Ali Daei",109));
-        scorers.add(new Player("Cristiano Ronaldo",122));
-        scorers.add(new Player("Lionel Messi",102));
-        scorers.add(new Player("Mokhtar Dahari",89));
-        return scorers;
     }
 
 }
