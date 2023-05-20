@@ -1,9 +1,12 @@
 package helper;
 
 import football.player.Player;
+import football.player.PlayersWithCups;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
+
+import static java.util.Arrays.asList;
+import static java.util.Collections.emptyList;
 
 public class PlayerTestHelper {
     public List<Player> getPlayers() {
@@ -16,4 +19,12 @@ public class PlayerTestHelper {
         return scorers;
     }
 
+    public List<PlayersWithCups> getPlayersWithCups() {
+        final List<PlayersWithCups> scorers = new LinkedList<>();
+        scorers.add(new PlayersWithCups("Ali Daei",109, asList("Bundis Liga","Azadegan")));
+        scorers.add(new PlayersWithCups("Cristiano Ronaldo",122,asList("Laliga","European Cup")));
+        scorers.add(new PlayersWithCups("Lionel Messi",102,asList("Laliga","European Cup")));
+        scorers.add(new PlayersWithCups("Mokhtar Dahari",89, emptyList()));
+        return scorers;
+    }
 }
