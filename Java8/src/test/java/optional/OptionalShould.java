@@ -63,8 +63,6 @@ public class OptionalShould {
         assertThat(Optional.ofNullable(finalName)).isEmpty();
 
     }
-
-
     @Test
     void have_default_values() {
         String name = "Amir";
@@ -91,6 +89,7 @@ public class OptionalShould {
 
     }
 
+    
     private static String getDefaultName() {
         out.println("Default name called");
         return "No name";
