@@ -1,12 +1,15 @@
 package optional;
 
+import football.player.Player;
 import football.team.Coach;
 import football.team.Degree;
 import football.team.Team;
+import helper.PlayerTestHelper;
 import org.assertj.core.api.Assertions;
 import org.assertj.core.api.ThrowableAssert;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
 import java.util.Optional;
 
 import static java.lang.System.out;
@@ -89,7 +92,15 @@ public class OptionalShould {
 
     }
 
-    
+    @Test
+    void should_not_create_stream_from_optional() {
+        final PlayerTestHelper playerTestHelper = new PlayerTestHelper();
+        final List<Player> players = playerTestHelper.getPlayers();
+
+        /*Optional.ofNullable(players).flatMap(p->p.stream())*/
+
+    }
+
     private static String getDefaultName() {
         out.println("Default name called");
         return "No name";
