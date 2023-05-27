@@ -17,8 +17,8 @@ public class CompanyShould {
     void calculate_tax_for_companies() {
         assertTaxToPay(250, new SelfEmployed());
         assertTaxToPay(330, new SAS());
-        assertTaxToPay(330, new SARL());
-        assertTaxToPay(330, new SASU());
+        assertTaxToPay(100, new SARL());
+        assertTaxToPay(100, new SASU());
 
     }
 
